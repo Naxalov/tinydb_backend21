@@ -1,0 +1,5 @@
+from tinydb import TinyDB
+db = TinyDB('db.json')
+# Document
+data = db.all()
+print(data)
