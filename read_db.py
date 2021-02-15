@@ -4,7 +4,9 @@ db = TinyDB('db.json')
 # db.truncate()
 
 q = Query()
-db.remove(q.user_id==4)
+db.remove(q.user_id==1)
+db.remove(q.user_id==2)
+db.remove(q.user_id==8)
 
 data = db.all()
 # user = db.search(q.user_id>2)
