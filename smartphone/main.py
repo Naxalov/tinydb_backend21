@@ -7,8 +7,8 @@ db.truncate()
 products_db = []
 for row in products[1:]:
     cat,company=row.split(',')[1:]
-    db.insert({'category':cat,'company':company})
+    products_db.append({'category':cat,'company':company})
     
-
+# print(products_db)
 # db.insert({'category':'smartphone','company':'Samsung'})
-
+db.insert_multiple(products_db)
