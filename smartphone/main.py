@@ -15,9 +15,16 @@ def insert_db(data_csv:str)->list:
     return collection
 
 db = TinyDB('db.json')
-# data = open('products.csv').read()
-data = open('specifications.csv').read()
+
+table1 = db.table('products')
+table2 = db.table('specifications')
+
+data1 = open('products.csv').read()
+data2 = open('specifications.csv').read()
 # print(products)
 db.truncate()
-products_db = insert_db(data)
-db.insert_multiple(products_db)
+table1.insert_multiple( insert_db(data1))
+table2.insert_multiple( insert_db(data2))
+
+
+
